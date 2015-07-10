@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		213493ED1B5025D100AFCD84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213493EC1B5025D100AFCD84 /* AppDelegate.swift */; };
+		213493EF1B5025D100AFCD84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213493EE1B5025D100AFCD84 /* ViewController.swift */; };
+		213493F21B5025D100AFCD84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213493F01B5025D100AFCD84 /* Main.storyboard */; };
+		213493F51B5025D100AFCD84 /* Tap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 213493F31B5025D100AFCD84 /* Tap.xcdatamodeld */; };
+		213493F71B5025D100AFCD84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213493F61B5025D100AFCD84 /* Assets.xcassets */; };
+		213493FA1B5025D100AFCD84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213493F81B5025D100AFCD84 /* LaunchScreen.storyboard */; };
+		213494051B5025D100AFCD84 /* TapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213494041B5025D100AFCD84 /* TapTests.swift */; };
+		213494101B5025D100AFCD84 /* TapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134940F1B5025D100AFCD84 /* TapUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		213494011B5025D100AFCD84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 213493E11B5025D100AFCD84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 213493E81B5025D100AFCD84;
+			remoteInfo = Tap;
+		};
+		2134940C1B5025D100AFCD84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 213493E11B5025D100AFCD84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 213493E81B5025D100AFCD84;
+			remoteInfo = Tap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		213493E91B5025D100AFCD84 /* Tap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		213493EC1B5025D100AFCD84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		213493EE1B5025D100AFCD84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		213493F11B5025D100AFCD84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		213493F41B5025D100AFCD84 /* Tap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tap.xcdatamodel; sourceTree = "<group>"; };
+		213493F61B5025D100AFCD84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		213493F91B5025D100AFCD84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		213493FB1B5025D100AFCD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		213494001B5025D100AFCD84 /* TapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		213494041B5025D100AFCD84 /* TapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTests.swift; sourceTree = "<group>"; };
+		213494061B5025D100AFCD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2134940B1B5025D100AFCD84 /* TapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2134940F1B5025D100AFCD84 /* TapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapUITests.swift; sourceTree = "<group>"; };
+		213494111B5025D100AFCD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		213493E61B5025D100AFCD84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213493FD1B5025D100AFCD84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213494081B5025D100AFCD84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		213493E01B5025D100AFCD84 = {
+			isa = PBXGroup;
+			children = (
+				213493EB1B5025D100AFCD84 /* Tap */,
+				213494031B5025D100AFCD84 /* TapTests */,
+				2134940E1B5025D100AFCD84 /* TapUITests */,
+				213493EA1B5025D100AFCD84 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		213493EA1B5025D100AFCD84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				213493E91B5025D100AFCD84 /* Tap.app */,
+				213494001B5025D100AFCD84 /* TapTests.xctest */,
+				2134940B1B5025D100AFCD84 /* TapUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		213493EB1B5025D100AFCD84 /* Tap */ = {
+			isa = PBXGroup;
+			children = (
+				213493EC1B5025D100AFCD84 /* AppDelegate.swift */,
+				213493EE1B5025D100AFCD84 /* ViewController.swift */,
+				213493F01B5025D100AFCD84 /* Main.storyboard */,
+				213493F61B5025D100AFCD84 /* Assets.xcassets */,
+				213493F81B5025D100AFCD84 /* LaunchScreen.storyboard */,
+				213493FB1B5025D100AFCD84 /* Info.plist */,
+				213493F31B5025D100AFCD84 /* Tap.xcdatamodeld */,
+			);
+			path = Tap;
+			sourceTree = "<group>";
+		};
+		213494031B5025D100AFCD84 /* TapTests */ = {
+			isa = PBXGroup;
+			children = (
+				213494041B5025D100AFCD84 /* TapTests.swift */,
+				213494061B5025D100AFCD84 /* Info.plist */,
+			);
+			path = TapTests;
+			sourceTree = "<group>";
+		};
+		2134940E1B5025D100AFCD84 /* TapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2134940F1B5025D100AFCD84 /* TapUITests.swift */,
+				213494111B5025D100AFCD84 /* Info.plist */,
+			);
+			path = TapUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		213493E81B5025D100AFCD84 /* Tap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 213494141B5025D100AFCD84 /* Build configuration list for PBXNativeTarget "Tap" */;
+			buildPhases = (
+				213493E51B5025D100AFCD84 /* Sources */,
+				213493E61B5025D100AFCD84 /* Frameworks */,
+				213493E71B5025D100AFCD84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tap;
+			productName = Tap;
+			productReference = 213493E91B5025D100AFCD84 /* Tap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		213493FF1B5025D100AFCD84 /* TapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 213494171B5025D100AFCD84 /* Build configuration list for PBXNativeTarget "TapTests" */;
+			buildPhases = (
+				213493FC1B5025D100AFCD84 /* Sources */,
+				213493FD1B5025D100AFCD84 /* Frameworks */,
+				213493FE1B5025D100AFCD84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				213494021B5025D100AFCD84 /* PBXTargetDependency */,
+			);
+			name = TapTests;
+			productName = TapTests;
+			productReference = 213494001B5025D100AFCD84 /* TapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2134940A1B5025D100AFCD84 /* TapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2134941A1B5025D100AFCD84 /* Build configuration list for PBXNativeTarget "TapUITests" */;
+			buildPhases = (
+				213494071B5025D100AFCD84 /* Sources */,
+				213494081B5025D100AFCD84 /* Frameworks */,
+				213494091B5025D100AFCD84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2134940D1B5025D100AFCD84 /* PBXTargetDependency */,
+			);
+			name = TapUITests;
+			productName = TapUITests;
+			productReference = 2134940B1B5025D100AFCD84 /* TapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		213493E11B5025D100AFCD84 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "AJ Priola";
+				TargetAttributes = {
+					213493E81B5025D100AFCD84 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					213493FF1B5025D100AFCD84 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 213493E81B5025D100AFCD84;
+					};
+					2134940A1B5025D100AFCD84 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 213493E81B5025D100AFCD84;
+					};
+				};
+			};
+			buildConfigurationList = 213493E41B5025D100AFCD84 /* Build configuration list for PBXProject "Tap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 213493E01B5025D100AFCD84;
+			productRefGroup = 213493EA1B5025D100AFCD84 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				213493E81B5025D100AFCD84 /* Tap */,
+				213493FF1B5025D100AFCD84 /* TapTests */,
+				2134940A1B5025D100AFCD84 /* TapUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		213493E71B5025D100AFCD84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213493FA1B5025D100AFCD84 /* LaunchScreen.storyboard in Resources */,
+				213493F71B5025D100AFCD84 /* Assets.xcassets in Resources */,
+				213493F21B5025D100AFCD84 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213493FE1B5025D100AFCD84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213494091B5025D100AFCD84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		213493E51B5025D100AFCD84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213493EF1B5025D100AFCD84 /* ViewController.swift in Sources */,
+				213493F51B5025D100AFCD84 /* Tap.xcdatamodeld in Sources */,
+				213493ED1B5025D100AFCD84 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213493FC1B5025D100AFCD84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213494051B5025D100AFCD84 /* TapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213494071B5025D100AFCD84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213494101B5025D100AFCD84 /* TapUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		213494021B5025D100AFCD84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 213493E81B5025D100AFCD84 /* Tap */;
+			targetProxy = 213494011B5025D100AFCD84 /* PBXContainerItemProxy */;
+		};
+		2134940D1B5025D100AFCD84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 213493E81B5025D100AFCD84 /* Tap */;
+			targetProxy = 2134940C1B5025D100AFCD84 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		213493F01B5025D100AFCD84 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				213493F11B5025D100AFCD84 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		213493F81B5025D100AFCD84 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				213493F91B5025D100AFCD84 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		213494121B5025D100AFCD84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		213494131B5025D100AFCD84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		213494151B5025D100AFCD84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Tap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.apdev.Tap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		213494161B5025D100AFCD84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Tap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.apdev.Tap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		213494181B5025D100AFCD84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.apdev.TapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tap.app/Tap";
+			};
+			name = Debug;
+		};
+		213494191B5025D100AFCD84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.apdev.TapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tap.app/Tap";
+			};
+			name = Release;
+		};
+		2134941B1B5025D100AFCD84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.apdev.TapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Tap;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		2134941C1B5025D100AFCD84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.apdev.TapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Tap;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		213493E41B5025D100AFCD84 /* Build configuration list for PBXProject "Tap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				213494121B5025D100AFCD84 /* Debug */,
+				213494131B5025D100AFCD84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		213494141B5025D100AFCD84 /* Build configuration list for PBXNativeTarget "Tap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				213494151B5025D100AFCD84 /* Debug */,
+				213494161B5025D100AFCD84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		213494171B5025D100AFCD84 /* Build configuration list for PBXNativeTarget "TapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				213494181B5025D100AFCD84 /* Debug */,
+				213494191B5025D100AFCD84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2134941A1B5025D100AFCD84 /* Build configuration list for PBXNativeTarget "TapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2134941B1B5025D100AFCD84 /* Debug */,
+				2134941C1B5025D100AFCD84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		213493F31B5025D100AFCD84 /* Tap.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				213493F41B5025D100AFCD84 /* Tap.xcdatamodel */,
+			);
+			currentVersion = 213493F41B5025D100AFCD84 /* Tap.xcdatamodel */;
+			path = Tap.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 213493E11B5025D100AFCD84 /* Project object */;
+}
