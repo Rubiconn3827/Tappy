@@ -15,6 +15,7 @@
 		213493FA1B5025D100AFCD84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213493F81B5025D100AFCD84 /* LaunchScreen.storyboard */; };
 		213494051B5025D100AFCD84 /* TapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213494041B5025D100AFCD84 /* TapTests.swift */; };
 		213494101B5025D100AFCD84 /* TapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134940F1B5025D100AFCD84 /* TapUITests.swift */; };
+		216DFFC81B58312800BD0B01 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216DFFC71B58312800BD0B01 /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		2134940B1B5025D100AFCD84 /* Tappy.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tappy.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2134940F1B5025D100AFCD84 /* TapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapUITests.swift; sourceTree = "<group>"; };
 		213494111B5025D100AFCD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		216DFFC71B58312800BD0B01 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				216DFFC81B58312800BD0B01 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 		213493E01B5025D100AFCD84 = {
 			isa = PBXGroup;
 			children = (
+				216DFFC71B58312800BD0B01 /* iAd.framework */,
 				213493EB1B5025D100AFCD84 /* Tap */,
 				213494031B5025D100AFCD84 /* TapTests */,
 				2134940E1B5025D100AFCD84 /* TapUITests */,
@@ -203,6 +207,7 @@
 				TargetAttributes = {
 					213493E81B5025D100AFCD84 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 2QRAF9G7R5;
 					};
 					213493FF1B5025D100AFCD84 = {
 						CreatedOnToolsVersion = 7.0;
@@ -410,10 +415,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Tap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apdev.Tappy;
 				PRODUCT_NAME = Tappy;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -421,10 +430,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Tap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apdev.Tappy;
 				PRODUCT_NAME = Tappy;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

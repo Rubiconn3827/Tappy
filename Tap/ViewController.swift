@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ViewController: UIViewController {
     
@@ -36,50 +37,48 @@ class ViewController: UIViewController {
     var greenTime = 3.7
     var radius:CGFloat!
     var highscore = 0
-    
+    var replacedHighscore = false
+    var interactionEnabled = true
+    var overlayDisplayed = false
+    var overlay:UIView!
     var blueTotalTimeLostResultingFromSpeedChange:Float = 0
     var currentChangeSpeedTime:CFTimeInterval = 0
     
+    var overlayHighscores:[UILabel]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        let vista : UIView = UIView(frame: self.view.frame)
-        let gradient : CAGradientLayer = CAGradientLayer()
-        gradient.frame = vista.bounds
-        
-        let cor2 = UIColor.greenColor().CGColor
-        let cor1 = UIColor.cyanColor().CGColor
-        let arrayColors = [cor1, cor2]
-        
-        gradient.colors = arrayColors
-        view.layer.insertSublayer(gradient, atIndex: 0)*/
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "gradient-large")!)
         
         if let readHighScore = self.getHighScore() {
             self.highscore = readHighScore
             self.highScoreLabel.text = "High Score: \(highscore)"
         }
+        
+        overlay = UIView(frame: self.view.frame)
+        overlay.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.6)
+        overlay.frame.origin.x += self.view.frame.width
+        makeOverlayLabels()
+        view.addSubview(overlay)
+        
         centerPoint = CGPointMake(view.center.x, view.center.y * 1.4)
         scoreProgressView.progress = 0
         radius = (self.view.frame.width * 0.6)
         circle = UIView(frame: CGRectMake(50, 50, 50, 50))
         circle.layer.cornerRadius = 25
         circle.clipsToBounds = true
-        //circle.layer.frame = circle.frame
         circle.backgroundColor = UIColor.whiteColor()
         circle.center = CGPointMake(0, centerPoint.y + radius)
         
         blue = UIView(frame: CGRectMake(50, 50, 50, 50))
         blue.layer.cornerRadius = 25
         blue.clipsToBounds = true
-        //blue.layer.frame = blue.frame
         blue.backgroundColor = UIColor.blackColor()
         blue.center = CGPointMake(centerPoint.x, centerPoint.y - radius/2)
         
         thirdCircle = UIView(frame: CGRectMake(50, 50, 50, 50))
         thirdCircle.layer.cornerRadius = 25
         thirdCircle.clipsToBounds = true
-        //blue.layer.frame = blue.frame
         thirdCircle.backgroundColor = UIColor.lightGrayColor()
         thirdCircle.center = CGPointMake(centerPoint.x, centerPoint.y - radius/2)
         thirdCircle.hidden = true
@@ -91,7 +90,6 @@ class ViewController: UIViewController {
         center.backgroundColor = UIColor.cyanColor().colorWithAlphaComponent(0.5)
         center.clipsToBounds = true
         center.center = centerPoint
-        //center.backgroundColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.3)
         view.addSubview(center)
         
         centerInside = UIView(frame: CGRectMake(view.center.x, view.center.y, radius - 50, radius - 50))
@@ -113,6 +111,10 @@ class ViewController: UIViewController {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: "tapped")
         view.addGestureRecognizer(tapRecognizer)
         
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "removeOverlay")
+        swipeRight.direction = .Right
+        overlay.addGestureRecognizer(swipeRight)
+        
         blue.layer.speed = 1
         circle.layer.speed = 1
         
@@ -122,6 +124,19 @@ class ViewController: UIViewController {
         animateForwards(blue, radius: radius, time: blueTime, speed:timeMultiple, key:"blue")
         animateBackwards(circle, radius: radius, time: redTime, speed:timeMultiple, key:"red")
         animateForwards(thirdCircle, radius: radius, time: greenTime, speed:timeMultiple, key:"green")
+    }
+    
+    func makeOverlayLabels() {
+        let title = UILabel(frame: CGRectMake(self.view.frame.width, self.messageLabel.frame.origin.y, self.view.frame.width - 16, 40))
+        title.textAlignment = .Center
+        title.textColor = UIColor.whiteColor()
+        title.font = self.messageLabel.font.fontWithSize(32)
+        title.text = "Game Over"
+        overlay.addSubview(title)
+        
+        let bar = UIView(frame: CGRectMake(self.view.frame.width, title.frame.origin.y + 48, self.view.frame.width - 16, 2))
+        bar.backgroundColor = UIColor.whiteColor()
+        overlay.addSubview(bar)
     }
     
     func changeBackgroundGradient(bottom:UIColor, top:UIColor) {
@@ -231,6 +246,7 @@ class ViewController: UIViewController {
         scoreLabel.textColor = UIColor.blackColor()
         self.blue.hidden = false
         self.circle.hidden = false
+        replacedHighscore = false
         playing = true
         timeMultiple = 1
         self.scoreLabel.text = "0"
@@ -241,8 +257,10 @@ class ViewController: UIViewController {
     }
     
     func tapped() {
-        guard playing == true else {
-            startGame()
+        if overlayDisplayed { return }
+        
+        guard playing && interactionEnabled else {
+            if !playing { startGame() }
             return
         }
         
@@ -252,7 +270,7 @@ class ViewController: UIViewController {
         if self.thirdCircle.hidden {
             if CGRectIntersectsRect(blueFrame!, redFrame!) {
                 score++
-                
+                flashScreen()
                 UILabel.animateWithDuration(5, animations: { () -> Void in
                     self.messageLabel.text = ""
                 })
@@ -267,12 +285,15 @@ class ViewController: UIViewController {
                 self.thirdCircle.hidden = true
                 flashScreen()
                 animateTextChange(messageLabel, text: "Triple!")
-            } else if CGRectIntersectsRect(blueFrame!, redFrame!) || CGRectIntersectsRect(greenFrame!, redFrame!) || CGRectIntersectsRect(blueFrame!, greenFrame!) {
+            } else if CGRectIntersectsRect(greenFrame!, redFrame!) || CGRectIntersectsRect(blueFrame!, greenFrame!) {
                 score += 3
                 self.thirdCircle.hidden = true
                 flashScreen()
                 let i = Int(arc4random_uniform(UInt32(2)))
                 animateTextChange(messageLabel, text: messages2[i])
+            } else if CGRectIntersectsRect(redFrame!, blueFrame!) {
+                score++
+                flashScreen()
             } else {
                 gameOver()
                 return
@@ -281,7 +302,10 @@ class ViewController: UIViewController {
         animateTextChange(scoreLabel, text: "\(score)")
         
         if arc4random() % 3 == 0 {
-            self.thirdCircle.hidden = false
+            UIView.animateWithDuration(1, animations: { () -> Void in
+                self.thirdCircle.hidden = false
+            })
+            
         }
         var index = score/10
         if index > messages.count - 1 { index = messages.count - 1 }
@@ -291,24 +315,28 @@ class ViewController: UIViewController {
         if score <= 10 {
             let progress = Double(score)/10
             scoreProgressView.setProgress(Float(progress), animated: true)
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         } else {
             let progress = (Double(score) % 10) / 10
             scoreProgressView.setProgress(Float(progress), animated: true)
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
         
         if score > highscore {
             highscore = score
             self.highScoreLabel.text = "High Score: \(highscore)"
+            if !replacedHighscore {
+                replaceHighscore()
+            }
+            saveHighScore(highscore)
         }
         
         if score >= 30 {
             scoreLabel.textColor = UIColor.redColor()
-            
         }
         
         if score >= 45 {
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "gradient-orange")!)
-            scoreLabel.textColor = UIColor.whiteColor()
         }
         
         if score >= 85 {
@@ -318,8 +346,55 @@ class ViewController: UIViewController {
         calculateSpeed()
     }
     
+    func displayOverlay() {
+        messageLabel.hidden = true
+        statusLabel.hidden = true
+        highScoreLabel.hidden = true
+        scoreLabel.hidden = true
+        interactionEnabled = false
+        UIView.animateWithDuration(1) { () -> Void in
+            self.overlay.frame.origin.x = 0
+        }
+        overlayDisplayed = true
+        for element in overlay.subviews {
+            UIView.animateWithDuration(0.8, delay: Double(overlay.subviews.indexOf(element)!), options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                element.frame.origin.x = 8
+                }, completion: nil)
+        }
+    }
+    
+    func removeOverlay() {
+        messageLabel.hidden = false
+        statusLabel.hidden = false
+        highScoreLabel.hidden = false
+        scoreLabel.hidden = false
+        interactionEnabled = true
+        UIView.animateWithDuration(1) { () -> Void in
+            self.overlay.frame.origin.x = self.view.frame.width
+            for element in self.overlay.subviews {
+                element.frame.origin.x = self.view.frame.width + 8
+            }
+        }
+        
+        overlayDisplayed = false
+        startGame()
+    }
+    
+    func replaceHighscore() {
+        let new = UILabel(frame: self.highScoreLabel.frame)
+        new.frame.origin.x += self.view.frame.width + 8
+        new.font = highScoreLabel.font
+        new.text = "High Score: \(score)"
+        UILabel.animateWithDuration(0.5) { () -> Void in
+            new.frame.origin.x = self.highScoreLabel.frame.origin.x
+        }
+        UILabel.animateWithDuration(0.5) { () -> Void in
+            self.highScoreLabel.frame.origin.x -= (self.view.frame.width + 8)
+        }
+        replacedHighscore = true
+    }
+    
     func gameOver() {
-        print("game over")
         self.blue.hidden = true
         self.circle.hidden = true
         self.thirdCircle.hidden = true
@@ -329,6 +404,7 @@ class ViewController: UIViewController {
         messageLabel.text = ""
         scoreProgressView.setProgress(0, animated: true)
         saveHighScore(highscore)
+        displayOverlay()
     }
     
     func animateTextChange(label:UILabel, text:String) {
